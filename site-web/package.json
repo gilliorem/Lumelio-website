@@ -1,0 +1,25 @@
+{
+  "name": "site-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch .style/sass/main.scss:./style/css/main.css ./style/sass/nav-bar-style.scss:./style/css/nav-bar-style.css ./style/sass/index.scss:./style/css/index.css ./style/sass/variables.scss:./style/css/variables.css ./style/sass/mixins.scss:./style/css/mixins.css ./style/sass/button.scss:./style/css/button.css ./style/sass/pages/stockage.scss:./style/css/stockage.css",
+    "main" : "sass --watch ./style/sass/main.scss ./style/css/main.css",
+    "nav-bar" : "sass --watch ./style/sass/nav-bar-style.scss ./style/css/nav-bar-style.css",
+    "index" : "sass --watch ./style/sass/index.scss ./style/css/index.css",
+    "variables" : "sass --watch ./style/sass/variables.scss ./style/css/variables.css",
+    "mixins" : "sass --watch ./style/sass/mixins.scss ./style/css/mixins.css",
+    "button" : "sass --watch ./style/sass/button.scss ./style/css/button.css",
+    "mobile" : "sass --watch ./style/sass/mobile.scss ./style/css/mobile.css",
+    "stockage" : "sass --watch ./style/sass/pages/stockage.scss ./style/css/stockage.css",
+    "a-propos" : "sass --watch ./style/sass/a-propos.scss ./style/css/a-propos.css",
+    "revente" : "sass --watch ./style/sass/pages/revente.scss ./style/css/revente.css",
+    "nos-produits" : "sass --watch ./style/sass/pages/nos-produits.scss ./style/css/nos-produits.css",
+    "professionnels" : "sass --watch ./style/sass/pages/professionnels.scss ./style/css/professionnels.css",
+    "offre-essentielle" : "sass --watch ./style/sass/pages/offre-essentielle.scss ./style/css/offre-essentielle.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
+

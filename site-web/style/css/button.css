@@ -1,0 +1,48 @@
+button {
+  position: relative;
+  width: fit-content;
+  padding: 2%;
+  background-color: #1E1248;
+  color: #ffed00;
+  border: none;
+  box-shadow: 0 0 1px 1px #1e1248;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+}
+
+.bubble-button {
+  position: fixed;
+  width: 10em;
+  padding: 0%;
+  background-color: rgba(255, 237, 0, 0.7);
+  color: #1E1248;
+  border: rgba(0, 0, 0, 0.1) solid 1px;
+  box-shadow: 0 0 1px 1px #1e1248;
+  border-radius: 50%;
+  font-size: 1.5em;
+  z-index: 1;
+  right: -10vh;
+  height: 10em;
+  padding-right: 7%;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .bubble-button {
+    display: none;
+  }
+}
+
+.bubble-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+  border: rgba(0, 0, 0, 0.4) solid 1px;
+}
+
+/*# sourceMappingURL=button.css.map */

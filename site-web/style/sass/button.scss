@@ -1,0 +1,32 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+button
+{
+    @include button(relative, fit-content, 2%, $firstColor, $thirdColor, none, 5px, 1.1em);
+}
+
+button:hover
+{
+    @include hover();
+}
+
+.bubble-button
+{
+    @media #{$mobile}
+    {
+        display: none;
+    }
+    @include button(fixed, 10em, 0%, $thirdColorTransparency, $firstColor, rgba(0,0,0,.1) solid 1px, 50%, 1.5em);
+    z-index: 1;
+    right: -10vh;
+    height: 10em;
+    padding-right: 7%;
+    font-weight: 500;
+}
+
+.bubble-button:hover
+{
+    @include hover();
+    border: rgba(0,0,0,.4) solid 1px;
+}

@@ -1,0 +1,79 @@
+@import "../main.scss";
+@import "../mixins.scss";
+@import "../button.scss";
+@import "../variable.scss";
+@import "../nav-bar-style.scss";
+
+.heading-center-a-propos
+{
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  padding: 5%;
+}
+
+.content-wrapper-a-propos
+{
+  @include flex(row, space-around, center);
+  flex-wrap: wrap;
+}
+
+.image-wrapper-a-propos
+{
+  width: 40%;
+}
+
+.image-a-propos
+{
+  width: 100%;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.p-a-propos
+{
+  width: 50%;
+  padding: 3%;
+}
+
+#header-a-propos
+{
+  background-color: #1E1248;
+}
+
+#header-a-propos>h2, #header-a-propos>h5
+{
+  color: white;
+}
+
+.button-wrapper-a-propos
+{
+  width: 100%;
+  padding: 3%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dessin
+{
+  padding-inline: 5%;
+}
+
+.nos-produits-content-wrapper
+{
+  @include flex(row, space-evenly, center);
+  flex-wrap: wrap;
+  padding: 2%;
+  width: 80%;
+  background-color: rgb(255, 237, 0);
+}
+
+#photo-panneau-manu
+{
+  width: 400px;
+}
+
+#nav-a-propos
+{
+  z-index: 0;
+  position: relative;
+  padding: 3%;
+}

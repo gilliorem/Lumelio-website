@@ -1,0 +1,384 @@
+@import "./mixins.scss";
+@import "./main.scss";
+@import "./variables.scss";
+
+
+#index-header
+{
+  position: relative;
+  min-width: 100%;
+  min-height: 200px;
+  height: 500px;
+  text-align: center;
+  @media #{$mobile}
+  {
+    background-image: url('../../media/photo/phone-background.png');
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+  }
+}
+
+h1, #proprietaire-elec-title 
+{
+  font-size:3em;
+  color: #1E1248;
+}
+
+.title-section>.text-wrapper>.heading-wrapper
+{
+    @include flex(column,center,center);
+}
+
+
+.grid
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  align-items: stretch;
+}
+
+.avis-wrapper
+{
+    .content-wrapper
+    {
+      margin: 5%;
+    }
+}
+
+.text
+{
+  p{
+    padding: 0%;
+   }
+}
+
+#index-title
+{
+  display: none;
+}
+
+.background-video
+{
+  position: relative;
+  top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    object-fit: cover;
+    z-index: -1;
+    @media #{$mobile}
+    {
+      display: none;
+    }
+}
+
+#index-title-section
+{
+  margin-block:0;
+}
+
+.title-and-subtitle-section-wrapper
+{
+  background-image: url('../../media/photo/yellowCircle.png');
+  background-position-x: 90%;
+  background-position-y: 60%;
+  
+  @media #{$mobile}
+  {
+    display: none;
+  }
+}
+
+.title-section
+{
+  @include flex(row, center, center);
+  padding-inline: 10%;
+  margin: -10%
+}
+
+.title-section>img
+{
+  min-height: 100%;
+  height: 100%;
+  width: 25%;
+  min-width: 10%;
+  @media #{$mobile}
+  {
+    display: none;
+  }
+}
+
+.text-wrapper>.link-wrapper>a:hover
+{
+  color: #00b1eb;
+}
+.text-wrapper>.link-wrapper
+{
+  padding: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.subtitle-section
+{
+  text-align: center;
+  background-color: #1E1248;
+}
+
+.subtitle-section>h2
+{
+  color: white;
+  padding: 2%;
+}
+
+.article-section
+{
+  display: grid;
+  margin-inline: 5%;  
+}
+
+.article-section>.heading-wrapper
+{
+    @include flex(row,center,center);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.article-section>.heading-wrapper>img
+{
+  max-width: 30%;
+}
+
+.article-section>.text
+{
+  padding: 2%;
+  text-align: justify;
+}
+
+@media screen and (min-width:1073px)
+{
+  .article-section
+  {
+    margin-inline: 15%;
+  }
+}
+
+.grid
+{
+  @media screen and (max-width: 768px) {
+    
+      @include flex(column,center,center);
+      grid-template-columns: 1fr;
+    }
+    .grid > .content-wrapper {
+      width: 100%;
+    }
+    .heading-right>.image-wrapper
+    {
+      grid-column: 1;
+    }
+    .heading-right>.text-wrapper
+    {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  
+}
+
+.grid>.content-wrapper
+{
+  display: grid;
+  justify-content: center;
+  padding: 3%;
+}
+
+.grid>.black
+{
+  background-color: black;
+  color: white;
+}
+
+.grid>.white>h2,.grid>.white>h3
+{
+  color: black;
+}
+
+.grid>.black>h2,.grid>.black>h3
+{
+  color: white;
+}
+
+.grid>.content-wrapper>.image-wrapper
+{
+  width: 100%;
+  margin-top: 5%;
+  height: auto;
+}
+
+.grid>.content-wrapper>.image-wrapper>img
+{
+  max-width: 75%;
+}
+
+.grid>.content-wrapper>.link-wrapper
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.form-section
+{
+  @include flex(column, center, center);
+}
+
+.form-section>.content-wrapper
+{
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  margin:5%;
+  padding: 5%;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}
+
+.form-section>.content-wrapper>.heading-wrapper
+{
+  margin-bottom: 3%;
+  padding-bottom: 3%;
+  border-bottom: 1px rgba(0, 0, 0,0.3) solid;
+  text-align: center;
+}
+
+form
+{
+    @include flex(row,center,center);
+  flex-wrap: wrap;
+}
+
+.pop-up
+{
+  display: none;
+}
+
+form>select
+{
+  width: 100%;
+  margin-inline: 25%;
+  margin-bottom: 5%;
+  border-radius: 4px;
+  padding: 2%;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0, 0,0, 0.3);
+  background-color: rgba(0, 0,0, 0);
+}
+
+form>.input-wrapper
+{
+  @include flex(row, space-evenly, center);
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+
+form>.input-wrapper>input, textarea
+{
+  max-width:200px ;
+  margin: 3%;
+  border-radius: 4px;
+  padding: 2%;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0, 0,0, 0.3);
+}
+
+form>h4
+{
+  width: 100%;
+  text-align: center;
+}
+
+form
+{
+  button
+  {
+    @include button(relative, 40%, 1%, #6f59ba, #ffed00, none, 1px, 1em);
+    margin:4%;
+    box-shadow: 0px 0px 10px 0px rgb(140 151 74 / 55%);
+
+  }
+}
+
+.avis-section
+{
+  text-align: center;
+}
+
+.avis-wrapper
+{
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.avis-section>.image-wrapper>img
+{
+  background-color: white;
+  width: 50%;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.accreditation-section
+{
+    @include flex(row,center,center);
+  flex-wrap: wrap;
+}
+
+
+.accreditation-section>.heading-wrapper
+{
+  width: 100%;
+  text-align: center;
+}
+
+.accreditation-section>.image-wrapper
+{
+  @include flex(row, space-around, center);
+  flex-wrap: wrap;
+}
+
+.accreditation-section>.image-wrapper>.image-wrapper
+{
+  width: auto;
+  height: 300px;
+}
+
+.accreditation-section>.image-wrapper>.img
+{
+  max-width: 80%;
+  height: 100%;
+  padding:5%;
+}
+
+#logo-edf, #logo-hauts-de-france, #logo-rge
+{
+  margin: -30px;
+}
+
+
+.call-to-action-section, #call-to-action-div
+{
+  
+  width: 100%;
+  text-align: center;
+}
+

@@ -1,0 +1,126 @@
+
+@media screen and (max-width:768px) {
+  
+
+  #solar-investment-image
+  {
+    width: 50%;
+  }
+  
+  div.column {
+    margin: 0;
+  }
+  section.design { 
+    flex-direction: column;
+  }
+  .social-media
+  {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text-wrapper>.heading-wrapper>h2
+  {
+    display: grid;
+  }
+  .title-section>.text-wrapper>.heading-wrapper>h2
+  {
+    display: none;
+  }
+  .heading-wrapper>h2
+  {
+  padding: 5%;
+  text-align: center;
+  }
+
+    .grid>.white>#pro-grid-title2,.grid>.white>#pro-grid-title3
+  {
+    color: white;
+  }
+
+  .grid>.black>#offre-essentielle-grid-title2,.grid>.black>#offre-essentielle-grid-title3
+  {
+    color: black;
+  }
+
+  .grid>#professionnels-grid
+  {
+    background-color: black;
+    color: white;
+  }
+  .grid>#offre-essentielle-grid
+  {
+    background-color: white;
+    color: black;
+  }
+
+  .avis-wrapper
+  {
+    flex-direction: column;
+  }
+
+  .avis-section>.image-wrapper>img
+  {
+    width: 100%;
+  }
+
+  .accreditation-section
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20%;
+  }
+  .accreditation-section>img
+  {
+    max-width: 50%;
+    height: auto;
+  }
+
+  #stockage-header
+  {
+    display: flex;
+  }
+
+
+
+  
+
+  #revente-section
+  {
+    background-image: none;
+    background-color: white;
+  }
+  #ugc-image
+  {
+    width: 50%;
+  }
+  #decompo-wrapper
+  {
+    display: none;
+  }
+  #decompo-bi-verre
+  {
+    display: none;
+  }
+  #decompo-bi-verre-phone
+  {
+    display: block;
+    width: 90%;
+  }
+  section.heading-left>.image-wrapper>img
+  {
+    width: 90%;
+  }
+  #heading-wrapper-pro
+  {
+    width:70%
+  }
+}
+
+
+#phone-link
+{
+  width: 20px;
+  height: auto;
+}
