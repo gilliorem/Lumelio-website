@@ -34,3 +34,5 @@ function counter(element, targetValue, timing)
 counter(teamCounterSpan, 24, 100);
 counter(customerCounterSpan, 231, 40);
 counter(reviewCounterSpan, 179, 50);
+
+// data-pid="ChIJJWdrbCS5G2IRcPIcF728cww"
