@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Secular+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @media screen and (max-width: 768px) {
   #solar-investment-image {
@@ -91,7 +91,7 @@ button {
   width: fit-content;
   padding: 2%;
   background-color: #1E1248;
-  color: #ffed00;
+  color: #00b1eb;
   border: none;
   box-shadow: 0 0 1px 1px #1e1248;
   border-radius: 5px;
@@ -108,7 +108,7 @@ button:hover {
   position: fixed;
   width: 10em;
   padding: 0%;
-  background-color: rgba(255, 237, 0, 0.7);
+  background-color: rgba(0, 177, 235, 0.5);
   color: #1E1248;
   border: rgba(0, 0, 0, 0.1) solid 1px;
   box-shadow: 0 0 1px 1px #1e1248;
@@ -271,13 +271,18 @@ h1 {
 
 h2 {
   font-size: 2.3em;
-  color: black;
+  color: #1E1248;
   margin: 3%;
+}
+@media(max-width: 768px) {
+  h2 {
+    text-align: center;
+  }
 }
 
 h3 {
   font-size: 1.7em;
-  color: #1E1248;
+  color: #ffed00;
   margin-block: 2.5%;
 }
 
@@ -306,7 +311,6 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
 }
 
 .heading-center-image {
@@ -487,8 +491,8 @@ footer > .symbols > .image-wrapper > img {
   .mobile {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
   .mobile .header-wrapper {
@@ -546,14 +550,6 @@ footer > .symbols > .image-wrapper > img {
     display: flex;
     flex-direction: column;
   }
-  .bubble-button {
-    width: 6em;
-    height: 6em;
-    right: -4vh;
-    font-size: 1.5em;
-    padding: 0.5em;
-    padding-right: 1em;
-  }
   .heading-wrapper {
     text-align: left;
   }
@@ -595,6 +591,12 @@ footer > .symbols > .image-wrapper > img {
     background-size: cover;
     background-position: top;
   }
+}
+#index-header .cta-button {
+  background-color: #ffed00;
+  color: #1E1248;
+  box-shadow: none;
+  border-radius: 1px;
 }
 
 h1, #proprietaire-elec-title {
@@ -705,6 +707,11 @@ h1, #proprietaire-elec-title {
   display: grid;
   margin-inline: 5%;
 }
+@media(max-width: 768px) {
+  .article-section {
+    display: none;
+  }
+}
 
 .article-section > .heading-wrapper {
   display: flex;
@@ -724,11 +731,51 @@ h1, #proprietaire-elec-title {
   text-align: justify;
 }
 
-@media screen and (min-width: 1073px) {
-  .article-section {
-    margin-inline: 15%;
-  }
+.who-section .who {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  padding: 8%;
 }
+.who-section .count {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: #1E1248;
+}
+.who-section .strong {
+  color: #1E1248;
+}
+.who-section .p {
+  text-align: justify;
+  margin: 10%;
+}
+.who-section .quotation-mark {
+  margin: -4%;
+  color: #1E1248;
+  font-family: "Secular One";
+  position: relative;
+  font-size: 5em;
+}
+.who-section .un {
+  transform: rotate(180deg);
+  width: 100%;
+  text-align: end;
+}
+.who-section .deux {
+  width: 100%;
+  text-align: end;
+  margin: -7%;
+}
+.who-section .sylvie-review {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .grid {
     display: flex;

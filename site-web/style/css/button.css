@@ -3,7 +3,7 @@ button {
   width: fit-content;
   padding: 2%;
   background-color: #1E1248;
-  color: #ffed00;
+  color: #00b1eb;
   border: none;
   box-shadow: 0 0 1px 1px #1e1248;
   border-radius: 5px;
@@ -20,7 +20,7 @@ button:hover {
   position: fixed;
   width: 10em;
   padding: 0%;
-  background-color: rgba(255, 237, 0, 0.7);
+  background-color: rgba(0, 177, 235, 0.5);
   color: #1E1248;
   border: rgba(0, 0, 0, 0.1) solid 1px;
   box-shadow: 0 0 1px 1px #1e1248;
