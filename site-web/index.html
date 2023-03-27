@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="style/css/index.css">    
     <title> Lumélio - Leader photovoltaïque des Hauts de France</title>
     <link rel="icon" href="media/photo/logo-lumelio.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <header id="index-header" class="reveal">
@@ -96,10 +98,32 @@
         </div>
     </section>
 
+    <section class="heading-center who-section mobile">
+        <h2>Qui sommes-nous ?</h2>
+        <div class="content-wrapper who">
+            <div class="team">Une équipe de <span class="team count" id="team-count">25</span> <strong class="strong">Personnes</strong> </div>
+            <div class="customer">Un accompagnement auprès de <span class="customer count" id="customer-count">231</span>  <strong class="strong">Clients</strong></div>
+            <div class="review">Une notoriété affirmée avec <span class="review count" id="review-count">179</span>  <strong class="strong">Avis certifés</strong> </div>
+        </div>
+        <div class="content-wrapper p">
+            <div class="sylvie-review">
+            <img src="media/photo/Sylvie-Poulain.png" alt="Photo de Sylvie Poulain">
+                <h2>Sylvie :</h2>
+            </div>
+            <em class="quotation-mark un">"</em>
+            <p>Société au top avec une équipe de professionnels, que ce soit le commercial comme les poseurs, sans oublier le dévouement du bureau pour les formalités et la gentillesse du patron, toujours à l’écoute et de bons conseils ! En même pas 48h, une super production, c’est bluffant ! 
+            Vous pouvez leur faire confiance les yeux fermés !</p> 
+            <em class="quotation-mark deux"> "</em>
+        </div>
+    </section>
+
+    
+
     <section class="grid reveal">
         <div class="content-wrapper black">
             <h2>Stockage</h2>
-            <h3>Bloquer le prix du kWh.</h3>
+            <h3>Bloquer l'inflation.</h3>
+            <p>Autoconsommez 8 mois de l'année et cessez de cessez de subir les augmentations.</p>
             <div class="link-wrapper">
                 <a href="stockage.html">En savoir plus ></a>
                 <a href="#contact">Étude gratuite > </a>
@@ -110,7 +134,8 @@
         </div>
         <div class="content-wrapper white">
             <h2>Revente</h2>
-            <h3>Un placement à 7%.</h3>
+            <h3>Rendement à 7%.</h3>
+            <p>Bénéficiez de la prime EDF à l'auto-consommation, à partir de 1 500€ et jusqu'à 3 330€ pour une installation de 9kWc. </p>
             <div class="link-wrapper revente">
                 <a href="revente.html">En savoir plus ></a>
                 <a href="#contact">Étude gratuite > </a>
@@ -122,17 +147,19 @@
         <div class="content-wrapper white" id="professionnels-grid">
             <h2 id="pro-grid-title2">Professionnels</h2>
             <h3 id="pro-grid-title3">Produisez vos besoins en électricité.</h3>
+            <p>Devenez acteur de votre consommation, économisez jusqu’à 70% sur votre facture EDF en stockant votre surplus d'électricité.
+            </p>
             <div class="link-wrapper">
                 <a href="professionnels.html">En savoir plus ></a>
                 <a href="#contact">Étude gratuite > </a>
             </div>
             <div class="image-wrapper">
-                <img src="media/photo/panneaux-solaires-differentes-taille.png" alt="panneaux photovoltaïques de différentes tailles">
+                <img src="media/photo/DJI_0055.jpg" alt="panneaux photovoltaïques de différentes tailles">
             </div>
         </div>
         <div class="content-wrapper black" id="offre-essentielle-grid">
             <h2 id="offre-essentielle-grid-title2">Offre Éssentielle</h2>
-            <h3 id="offre-essentielle-grid-title3">Votre installation solaire à partir de 8 990€.</h3>
+            <h3 id="offre-essentielle-grid-title3">Votre installation solaire à <br>8 990€.</h3>
             <div class="link-wrapper">
                 <a href="offre-essentielle.html">En savoir plus ></a>
                 <a href="#contact">Étude gratuite > </a>
@@ -158,8 +185,7 @@
                     <input type="text" placeholder="Nom complet" id="name">
                     <input type="email" placeholder="mail" id="mail">
                     <input type="tel" placeholder="Téléphone" id="tel">
-                    <input type="text" placeholder="Montant facture EDF" id="facture-edf">
-                    <textarea placeholder="Votre demande détaillée avec le nom de la communne :" id="textarea"></textarea>
+                    <textarea placeholder="Votre demande détaillée avec la commune :" id="textarea"></textarea>
                 </div>
                 <button type="submit">ENVOYER</button>
                 <div class="pop-up"><h4>Votre demande a bien été prise en compte. Nous traitons votre reqûete et délivrons une réponse dans les 24h.</h4></div>
@@ -276,9 +302,11 @@
             })(document, "script");
             </script>
     </footer>
+    <script src="../frameworks/dom.js"></script>p
     <script src="./js/script.js"></script>
     <script src="./js/nav-bar.js"></script>
     <script src="./js/bubble-button.js"></script>
+    <script src="./js/counter.js"></script>
     <script src="./js/carousel.js"></script>
 </body>
 </html>

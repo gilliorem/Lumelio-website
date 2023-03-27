@@ -1,6 +1,4 @@
-@import "./mixins.scss";
 @import "./main.scss";
-@import "./variables.scss";
 
 
 #index-header
@@ -18,7 +16,16 @@
     background-size: cover;
     background-position:top;
   }
+  .cta-button
+  {
+    background-color: $secondColor;
+    color: $firstColor;
+    box-shadow: none;
+    border-radius: 1px;
+  }
 }
+
+
 
 h1, #proprietaire-elec-title 
 {
@@ -139,6 +146,10 @@ h1, #proprietaire-elec-title
 
 .article-section
 {
+  @media#{$mobile}
+  {
+    display: none;
+  }
   display: grid;
   margin-inline: 5%;  
 }
@@ -161,13 +172,59 @@ h1, #proprietaire-elec-title
   text-align: justify;
 }
 
-@media screen and (min-width:1073px)
+
+.who-section
 {
-  .article-section
+  .who
   {
-    margin-inline: 15%;
+    @include flex(row, center, center);
+    flex-wrap: nowrap;
+    text-align: center;
+    padding: 8%
+  }
+  .count
+  {
+    @include flex(row, center, center);
+    font-size: 3em;
+    color: $firstColor;
+  }
+  .strong
+  {
+    color: $firstColor;
+  }
+
+  .p
+  {
+    text-align: justify;
+    margin: 10%;
+  }
+  
+  .quotation-mark
+  {
+    margin: -4%;
+    color: $firstColor;
+    font-family: "Secular One";
+    position: relative;
+    font-size: 5em;
+  }
+  .un
+  {
+    transform: rotate(180deg);
+    width: 100%;
+    text-align: end;
+  }
+  .deux
+  {
+    width: 100%;
+    text-align: end;
+    margin: -7%;
+  }
+  .sylvie-review
+  {
+    display: none;
   }
 }
+
 
 .grid
 {
