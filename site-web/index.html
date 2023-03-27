@@ -101,9 +101,9 @@
     <section class="heading-center who-section mobile">
         <h2>Qui sommes-nous ?</h2>
         <div class="content-wrapper who">
-            <div class="team">Une équipe de <span class="team count">25</span> <strong class="strong">Personnes</strong> </div>
-            <div class="customer">Un accompagnement auprès de <span class="customer count">231</span>  <strong class="strong">Clients</strong></div>
-            <div class="review">Une notoriété affirmée avec <span class="review count">179</span>  <strong class="strong">Avis certifés</strong> </div>
+            <div class="team">Une équipe de <span class="team count" id="team-count">25</span> <strong class="strong">Personnes</strong> </div>
+            <div class="customer">Un accompagnement auprès de <span class="customer count" id="customer-count">231</span>  <strong class="strong">Clients</strong></div>
+            <div class="review">Une notoriété affirmée avec <span class="review count" id="review-count">179</span>  <strong class="strong">Avis certifés</strong> </div>
         </div>
         <div class="content-wrapper p">
             <div class="sylvie-review">
@@ -185,8 +185,7 @@
                     <input type="text" placeholder="Nom complet" id="name">
                     <input type="email" placeholder="mail" id="mail">
                     <input type="tel" placeholder="Téléphone" id="tel">
-                    <input type="text" placeholder="Montant facture EDF" id="facture-edf">
-                    <textarea placeholder="Votre demande détaillée avec le nom de la communne :" id="textarea"></textarea>
+                    <textarea placeholder="Votre demande détaillée avec la commune :" id="textarea"></textarea>
                 </div>
                 <button type="submit">ENVOYER</button>
                 <div class="pop-up"><h4>Votre demande a bien été prise en compte. Nous traitons votre reqûete et délivrons une réponse dans les 24h.</h4></div>
@@ -303,6 +302,7 @@
             })(document, "script");
             </script>
     </footer>
+    <script src="../frameworks/dom.js"></script>p
     <script src="./js/script.js"></script>
     <script src="./js/nav-bar.js"></script>
     <script src="./js/bubble-button.js"></script>
