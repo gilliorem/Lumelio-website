@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+
+:root
+{
+    --main-color-0: #ffffff;
+    --main-color-1: #1e1248;
+    --main-color-1a : rgba(30,18,72,0.4);
+    --main-color-2: #FFED00;
+    --main-color-2a: rgba(255,237,0, 0.3);
+    --main-color-3: #00b1eb;
+    --border-radius:4px;
+    --box-shadow: 0px 0px 4px 2px rgba(30,18,72,0.2);
+}
+
+*
+{
+    font-family: 'Poppins';
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+    background: rgba(30,18,72,0.1);
+}
+
+section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+
+.title-wrapper
+
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('./media/image/lumelio-banniere.png') ;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+}
+
+h1
+{
+    color: var(--main-color-1);
+    text-align: center;
+}
+
+h2
+{
+    color: var(--main-color-3);
+}
+
+.title-wrapper>h2
+{
+    display: none;
+}
+.content-wrapper
+{
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input
+{
+    background-color: transparent;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    font-size: 1.1em;
+    padding: 2% 3%;
+}
+
+input:focus
+{
+    background-color: var(--main-color-0);
+}
+
+button
+{
+    background-color: var(--main-color-2a);
+    box-shadow: var(--box-shadow);
+    border:none;
+    border-radius: var(--border-radius);
+    color: var(--main-color-1);
+    cursor: pointer;
+    font-size:1.1em;
+    padding: 2% 4%;
+    margin : 3%;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover
+{
+    background-color: var(--main-color-1);
+    color: var(--main-color-2);
+}
+
+.button-wrapper
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-wrapper>button
+{
+    font-size: 0.5em;
+    background-color: var(--main-color-1);
+    color: var(--main-color-2);
+}
