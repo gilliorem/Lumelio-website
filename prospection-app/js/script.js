@@ -86,7 +86,16 @@ class Connexion extends Interface
         this.createAccountButton = createButton(this.newInterface, "Create Account", ["new-account-button"]);
         this.setConnection(this.connectionButton);
         this.setAccount(this.createAccountButton);
+        
+        let storedId = localStorage.getItem("id");
+        if(storedId)
+        {
+            let id = JSON.parse(storedId);
+            this.usernameInput.value = id.username;
+            this.passwordInput.value = id.password;
+        }
     }
+    
 
     
 
@@ -99,6 +108,8 @@ class Connexion extends Interface
                 username : this.usernameInput.value,
                 password : this.passwordInput.value
             }
+
+            localStorage.setItem("id",JSON.stringify(id));
 
             app.request("./connection.php",id,(response)=>
             {
@@ -407,6 +418,5 @@ window.app.connectionInterface = new Connexion();
 
 
 
-// reload de la page : save les id de co dans le local storage pour rechargé l'espace connecté de l'utilisateur. si on est "connecté, et qu'on reload la page : on load le app.dashboard."
 
 // formulaire prospection : logic du profile
