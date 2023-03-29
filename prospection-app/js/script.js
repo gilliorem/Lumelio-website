@@ -1,5 +1,3 @@
-
-
 window.app = {
     interfaces :[],
     username : ""
@@ -295,32 +293,17 @@ class Profile extends Interface
         
         this.setDashboard(this.backToDashboard);
         this.setInfo(this.validButton);
-        this.setLocalName(this.validButton);
-        this.setGetLocalName(this.backToDashboard, this.dashboardDiv);
 
-        
-    }
-
-    setLocalName(button)
-    {
-        button.addEventListener("click",()=>
+        let storedProfile = localStorage.getItem("profile");
+        if(storedProfile)
         {
-            this.savedName = localStorage.setItem("name", this.nameInput.value);
-        })
+            let profile = JSON.parse(storedProfile);
+            this.nameInput.value = profile.nom;
+            this.telInput.value = profile.tel;
+            this.select.value = profile.role;
+        }
     }
 
-    setGetLocalName(button,welcomeDiv)
-    {
-        button.addEventListener('click',()=>
-        {
-            this.savedName = localStorage.getItem("name");
-            console.log(this.savedName);
-            console.log(this.dashboardDiv)
-            welcomeDiv.innerText = this.savedName;
-
-        })
-    }
-    
 
     
     
@@ -348,7 +331,9 @@ class Profile extends Interface
                 nom : this.nameInput.value,
                 tel : this.telInput.value,
                 role : this.select.value
-            }
+            };
+
+            localStorage.setItem("profile", JSON.stringify(profile));
             
             app.request("./profile.php",profile,(response)=>
             {
@@ -359,6 +344,8 @@ class Profile extends Interface
             
         })
     }
+
+    
 }
 
 class Prospection extends Interface
