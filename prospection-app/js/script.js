@@ -275,7 +275,7 @@ class Profile extends Interface
 {
     constructor()
     {
-        super("'PROFILE Name'")
+        super("NAME");
     }
 
     draw()
@@ -295,7 +295,36 @@ class Profile extends Interface
         
         this.setDashboard(this.backToDashboard);
         this.setInfo(this.validButton);
+        this.setLocalName(this.validButton);
+        this.setGetLocalName(this.backToDashboard, this.dashboardDiv);
+
+        
     }
+
+    setLocalName(button)
+    {
+        button.addEventListener("click",()=>
+        {
+            this.savedName = localStorage.setItem("name", this.nameInput.value);
+        })
+    }
+
+    setGetLocalName(button,welcomeDiv)
+    {
+        button.addEventListener('click',()=>
+        {
+            this.savedName = localStorage.getItem("name");
+            console.log(this.savedName);
+            console.log(this.dashboardDiv)
+            welcomeDiv.innerText = this.savedName;
+
+        })
+    }
+    
+
+    
+    
+
     setDashboard(button)
     {
         button.addEventListener("click",()=>
