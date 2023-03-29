@@ -138,6 +138,17 @@ section
   }
 }
 
+.content-wrapper
+{
+  @include flex(row,space-around,center);
+  .first, .second
+  {
+    width: 90%
+  }
+}
+
+
+
 .heading-wrapper
 {
   @include flex(row,center,center);
@@ -145,6 +156,15 @@ section
   text-align: justify;
 }
 
+.header-wrapper
+{
+  @media#{$desktop}
+  {
+    background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
+    background-size: 100% ;
+    background-repeat: no-repeat;
+  }
+}
 
 footer
 {

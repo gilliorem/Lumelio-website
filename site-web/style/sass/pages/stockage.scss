@@ -7,11 +7,28 @@
   align-items: flex-start;
 }
 
+.stockage-h1
+{
+  color: white;
+  margin-top: 10%;
+  span
+  {
+    color: $secondColor;
+  }
+}
+
 #heading-wrapper-stockage
 {
   text-align: left;
 }
 
+.stockage 
+{
+  p
+  {
+    width: 50%;
+  }
+}
 
 .p1
 {
@@ -21,6 +38,11 @@
 section.heading-right>.image-wrapper>img
 {
   width: 80%;
+}
+
+#innovation-wrapper
+{
+  align-items: baseline;
 }
 
 #monitoring-image

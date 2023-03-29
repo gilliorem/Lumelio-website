@@ -3,7 +3,7 @@
 
 button
 {
-    @include button(relative, fit-content, 2%, $firstColor, $thirdColor, none, 5px, 1.1em);
+    @include button(relative, fit-content, 2%, $firstColorTransparency, $secondColor, none, 5px, 1.1em);
 }
 
 button:hover
@@ -27,6 +27,6 @@ button:hover
 
 .bubble-button:hover
 {
-    @include hover();
     border: rgba(0,0,0,.4) solid 1px;
+    background-color: $secondColor;
 }

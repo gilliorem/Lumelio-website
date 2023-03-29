@@ -27,7 +27,6 @@ nav {
   background-color: transparent;
   color: #1E1248;
   border: none;
-  box-shadow: 0 0 1px 1px #1e1248;
   border-radius: 5px;
   font-size: 3em;
   box-shadow: 0 0 1px 1px #ffffff;
@@ -70,7 +69,6 @@ nav {
   background-color: transparent;
   color: #1E1248;
   border: white solid 1px;
-  box-shadow: 0 0 1px 1px #1e1248;
   border-radius: 5px;
   font-size: 1.3em;
 }

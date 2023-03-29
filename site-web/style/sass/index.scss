@@ -180,8 +180,22 @@ h1, #proprietaire-elec-title
     @include flex(row, center, center);
     flex-wrap: nowrap;
     text-align: center;
-    padding: 8%
+    padding: 8%;
+    div
+    {
+      @media#{$desktop}
+      {
+        margin:5%;
+      }
+    }
+    @media#{$desktop}
+    {
+      background-color: $secondColorTransparency;
+      border-radius: 10px;
+    }
   }
+  
+  
   .count
   {
     @include flex(row, center, center);
@@ -195,6 +209,7 @@ h1, #proprietaire-elec-title
 
   .p
   {
+    @include flex(column, center, center);
     text-align: justify;
     margin: 10%;
   }
@@ -202,6 +217,10 @@ h1, #proprietaire-elec-title
   .quotation-mark
   {
     margin: -4%;
+    @media#{$desktop}
+    {
+      margin: 0;
+    }
     color: $firstColor;
     font-family: "Secular One";
     position: relative;
@@ -218,6 +237,10 @@ h1, #proprietaire-elec-title
     width: 100%;
     text-align: end;
     margin: -7%;
+    @media#{$desktop}
+    {
+      margin: 0;
+    }
   }
   .sylvie-review
   {

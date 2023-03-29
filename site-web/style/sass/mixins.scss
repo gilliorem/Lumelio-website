@@ -17,7 +17,6 @@
     background-color: $background-color;
     color: $color;
     border:$border;
-    box-shadow: 0 0 1px 1px #1e1248;
     border-radius: $border-radius;
     font-size: $font-size;
 }
@@ -32,5 +31,5 @@
 {
     cursor: pointer;
     box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 30%);
-    transition: 1s;
+    background-color: $firstColor;
 }

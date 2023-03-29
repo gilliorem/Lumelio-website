@@ -13,12 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/stockage.css">
     <title>Lumélio - Stockage d'électricité</title>
 </head>
 <body>
-    <header id="stockage-header" class="reveal">
+    <div class="header-wrapper">
+        <header id="stockage-header" class="reveal">
             <nav>
                 <a href="index.html" class=""><img src="./media/photo/logo-lumelio.png" alt="logo lumelio"></a>
                 <a href="stockage.html" class="">Stockage</a>
@@ -46,48 +46,62 @@
     
     <button class="bubble-button"> Demande de devis</button>
     
-    <section class="stockage heading-left reveal">
-        <div class="heading-wrapper" id="heading-wrapper-stockage">
-            <h2>Votre électricité consommée gratuitement.</h2>
-            <h1>
-                Le stockage d'électricité photovoltaïque : c'est possible grâce à la batterie virtuelle <br>
-            </h1>
+        <section class="stockage heading-left reveal">
+            <div class="heading-wrapper" id="heading-wrapper-stockage">
+                <h1 class="stockage-h1">
+                Le <span> stockage</span> d'électricité, c'est possible grâce à la <span> batterie virtuelle </span> <br>
+                </h1>
+            </div>
+            
+        </section>
+    </div>
+    <section class="stockage heading-center reveal">
+        <div class="heading-wrapper">
+            <h2>Comment rendre votre installation solaire autonome ?</h2>
         </div>
-        <div class="image-wrapper">
-            <img  src="media/photo/chantier-solaire-agriculteur-santes-decarnin2.png" alt="pose de panneaux solaires à santes chez Olivier Decarnin" id="pose-chantier-decarnin" class="image">
+        <div class="video-wrapper">
+            <video controls width="90%" src="media/video/video-explication-1080p.mp4">
+            </video>
         </div>
-        <button>Lancer L'étude</button>
+        <div class="content-wrapper">
+            <p>
+                <em> Stocker son électricité, est-ce rentable ? </em> <br>
+            Une installation solaire équipée de la batterie virtuelle vous permet de stocker l'intégralité de votre production photovoltaïque. <br>
+            Ce routeur va analyser, en temps réel, votre production et votre consommation d'électricité sur votre espace personnel.
+            Vous ne payez qu'une fois le compteur vidé. 
+            Être auto-consommateur vous donne accès à l’autonomie énergétique à 100%.
+            L'électricité que vous produisez vous appartient: vous êtes libre de la consommée gratuitement.‍
+            </p>
+            <button>Démarer une étude de rentabilité</button>
+        </div>
     </section>
-    
+
     
 
     <section class="stockage heading-right design reveal">
-        <div class="image-wrapper" id="decompo-wrapper">
-            <img id="decompo-bi-verre" width="400" src="media/photo/decompo-panneau-bi-verre.png" alt="panneau photovoltaïque bi-verre bifacial">
-        </div>
-        <div class="text-wrapper">
-            <h2><strong>À la croisée des innovations.</strong> </h2> <br>
-            <p class="p1">
+        <div class="content-wrapper" id="innovation-wrapper">
+            <div class="first">
+                <h2><strong>À la croisée des innovations.</strong> </h2> <br>
+                <p class="p1">
                 La nouvelle technologie bi-verre bifaciale offre un rendement supérieur. <br>
                 Les cellules photovoltaïques sont présentes sur les deux faces. 
-            </p> 
-            <div class="img-wrapper">
-                <img id="decompo-bi-verre-phone" width="400" src="media/photo/decompo-panneau-bi-verre.png" alt="panneau photovoltaïque bi-verre bifacial">
+                </p> 
             </div>
-            <h2><strong>Un design innovant.</strong><br></h2>
-            <ul>
-                <li>Un design intelligent pour une meilleure rentabilité. <br>
-                <li>Une durabilité prolongée: 30 ans de garantie performance-linéaire. <br>
-                <li>Une fiabilité approuvée: verre ultra-résistant aux chocs (grêle).
-            </ul>
-        </div>    
-        <button>Lancer L'étude</button>
+            <div class="second">
+                <h2><strong>Un design innovant.</strong><br></h2>
+                <ul>
+                    <li>Un design intelligent pour une meilleure rentabilité. 
+                    <li>Une durabilité prolongée: 30 ans de garantie performance-linéaire. 
+                    <li>Une fiabilité approuvée: verre ultra-résistant aux chocs (grêle).
+                </ul>
+            </div>    
+        </div>
     </section>
     
     
 
     <section class="stockage heading-left reveal">
-        <div class="text-wrapper">
+        <div class="content-wrapper">
             <h2>Batterie virtuelle</h2>
             <p>
                 Ce boîtier virtuel fonctionne comme votre box internet : 
@@ -97,36 +111,15 @@
                 Lorsque votre batterie virtuelle est vidée, 
                 vous consommez votre électricité au tarif réglementé.
             </p>
+            <div class="image-wrapper">
+                <img src="media/photo/UG-myLight.png" alt="Unité de Gestion MyLight Systems" id="ugc-image">
+            </div>
         </div>
-        <div class="image-wrapper">
-            <img src="media/photo/UG-myLight.png" alt="Unité de Gestion MyLight Systems" id="ugc-image">
-        </div>
-        <button>Lancer L'étude</button>
+            <button>Lancer L'étude</button>
     </section>
         
 
-    <section class="stockage heading-center reveal">
-        <div class="heading-wrapper">
-            <h2>Installation solaire autonome</h2>
-        </div>
-            <div class="video-wrapper">
-                <video controls width="90%" src="media/video/video-explication-1080p.mp4">
-                </video>
-            </div>
-        <p>
-            <em> Stocker son électricité, est-ce rentable ? </em> <br>
-
-            Une installation solaire équipée de la batterie virtuelle vous permet de stocker l'intégralité de votre production photovoltaïque. <br>
-            Ce routeur va analyser, en temps réel, votre production et votre consommation d'électricité sur votre espace personnel.
-            Vous ne payez qu'une fois le compteur vidé. 
-            Être auto-consommateur vous donne accès à l’autonomie énergétique à 100%.
-            
-            
-            L'électricité que vous produisez (avec vos panneaux) vous appartient: vous êtes libre de la consommée gratuitement.‍
-        </p>
-        <button>Lancer L'étude</button>
-    </section>
-
+    
     <section class="stockage heading-right reveal ">
         <div class="text-wrapper">
             <h2>Performances à portée de main</h2>
