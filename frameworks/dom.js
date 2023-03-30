@@ -30,6 +30,28 @@ function createImg(parent, source, alt, _class )
     return newImg;
 }
 
+function createForm(parent, title, elements)
+{
+    const form = createHtmlElement("form", parent, title);
+    elements.forEach(element=>
+        {
+            if (element.type === "input")
+            {
+                createInputElement(form,  element.class, element.placeholder);
+            }
+            else if (element.type ==="option")
+            {
+                createOption(form, element.text, element.value, element.class);
+            }
+            else if (element.type ==="button")
+            {
+                createButton(form, element.text, element.class);
+            }
+        })
+}
+
+
+
 function createInputElement(parent, type, placeholder = '', _class = []) 
 {
     const input = createHtmlElement('input', parent, "", _class);
@@ -57,6 +79,8 @@ function createOption(parent, text, optionText, _class)
     option.value = optionText;
     return option;
 }
+
+
 
 function hideInterface(_interface)
 {

@@ -370,8 +370,18 @@ class Prospection extends Interface
         super.draw();
         this.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
         this.prospectionTitle = createTitle(this.prospectionDiv, "Prospection", ["prospection-title"]);
+        this.elements = [
+            {type:"select", text:"Statut prospection :", options: [
+                {text: "Prise de RDV", value: "RDV"},
+                {text: "Refus", value: "Refus"},
+                {text: "Hors cible", value: " Hors Cible"}
+            ], class: "statut-prospection"},
+            {type: "input", placeholder: "Montant Facture EDF", class: "facture-input"},
+            {type: "input", placeholder: "NOM COMPLET", class: "name-input"},
+            {type: "input", placeholder: "06", class: "tel-input"}
+        ]
+        createForm(this.newInterface, "Formulaire photovoltaïque", this.elements);
         this.backToDashboard = createButton(this.prospectionDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
-
         this.setDashboard(this.backToDashboard);
     }
     
