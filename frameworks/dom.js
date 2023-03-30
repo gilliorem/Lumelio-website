@@ -39,6 +39,10 @@ function createForm(parent, title, elements)
             {
                 createInputElement(form,  element.class, element.placeholder);
             }
+            else if (element.type ==="select")
+            {
+                createHtmlElement("select", parent, element.text, element.class)
+            }
             else if (element.type ==="option")
             {
                 createOption(form, element.text, element.value, element.class);
