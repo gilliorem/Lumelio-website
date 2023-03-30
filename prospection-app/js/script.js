@@ -294,7 +294,7 @@ class Profile extends Interface
         this.profileTitle = createTitle(this.profileDiv, "Mon Profil", ["profile-title"]);
         this.nameInput = createInputElement(this.profileDiv, 'text', 'nom complet', ["name-input"] );
         this.telInput = createInputElement(this.profileDiv, 'tel', 'numero de telephone', ["phone-input"] );
-        this.label = createHtmlElement('label', this.profileDiv, "Mon Rôle:", ['label-role']);
+        this.label = createHtmlElement('label', this.profileDiv, "Rôle:", ['label-role']);
         this.select = createHtmlElement('select', this.label, "", ['role-selection']);
         this.option = createOption(this.select, "", "empty", ["selection-option"]);
         this.option = createOption(this.select, "Commercial", "Commercial", ["commercial-option"]);
@@ -370,21 +370,18 @@ class Prospection extends Interface
         super.draw();
         this.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
         this.prospectionTitle = createTitle(this.prospectionDiv, "Prospection", ["prospection-title"]);
-        this.elements = 
-        [
-             {type:"select", class:"Statut prospection :", options: 
-             [
-                {text: "Prise de RDV", value: "RDV"},
-                {text: "Refus", value: "Refus"},
-                {text: "Hors cible", value: " Hors Cible"}
-             ], class: "statut-prospection"},
-            {type: "input", placeholder: "Montant Facture EDF", class: "facture-input"},
-            {type: "input", placeholder: "NOM COMPLET", class: "name-input"},
-            {type: "input", placeholder: "06", class: "tel-input"},
+        this.label = createHtmlElement('label', this.prospectionDiv, "Statut Prospection:", ['label-prospect']);
+        this.select = createHtmlElement('select', this.label, "", ['statut-selection']);
+        this.optionRdv = createOption(this.select, "Prise de RDV", "Prise de RDV", ["selection-option"]);
+        this.optionRefus = createOption(this.select, "Refus", "Refus", ["refus-option"]);
+        this.optionHorsCible = createOption(this.select, "Hors-cible", "hors-cible", ["hors-cible-option"]);
+        this.factureInput = createInputElement(this.prospectionDiv, 'montant facture EDF', 'montant facture', ["facture-input"] );
+        this.nameInput = createInputElement(this.prospectionDiv, 'text', 'nom complet (très important)', ["name-input"] );
+        this.telInput = createInputElement(this.prospectionDiv, 'tel', 'numero de telephone', ["phone-input"] );
+        this.adressInput = createInputElement(this.prospectionDiv, 'adress', 'adresse', ["adresse-input"] );
+        this.dateInput = createInputElement(this.prospectionDiv, 'datetime-local', 'date', ["date-time-input"] );
 
-        ]
-
-        this.form = createForm(this.newInterface, "Formulaire photovoltaïque", this.elements);
+        
         this.submitButton = createButton(this.newInterface, "valider", "submit-button");
         this.setDataToServer(this.submitButton);
 
@@ -395,7 +392,23 @@ class Prospection extends Interface
     {
         button.addEventListener("click",()=>
         {
-            console.log(this.elements);
+            let dataClient =
+            {
+                result : this.select.value,
+                facture : this.factureInput.value,
+                nom : this.nameInput.value,
+                tel : this.telInput.value,
+                adress : this.adressInput.value,
+                date : this.dateInput.valueAsNumber/1000
+            };
+
+            localStorage.setItem("dataClient", JSON.stringify(dataClient));
+
+            app.request("./dataClient.php", dataClient,(response)=>
+             {
+                console.log(response);
+                this.dataSavecMessage = createDiv(this.prospectionDiv, response, ['data-saved-msg']);
+            })
         })
     }
     

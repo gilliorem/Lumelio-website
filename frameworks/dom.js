@@ -45,7 +45,7 @@ function createForm(parent, title, elements)
             }
             else if (element.type ==="option")
             {
-                createOption(form, element.text, element.value, element.class);
+                createOption(form, text="", element.value, element.class);
             }
             else if (element.type ==="button")
             {
