@@ -28,6 +28,11 @@ nav
     box-shadow: 0 0 1px 1px #ffffff;
 }
 
+.nav-button:hover
+{
+    background-color: $firstColorTransparency;
+}
+
 
 
 .nav-menu

@@ -11,10 +11,10 @@
   @media #{$mobile}
   {
     background-image: url('../../media/photo/phone-background.png');
-    height: 80vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:top;
+    background-position:right;
   }
   .cta-button
   {
@@ -180,7 +180,7 @@ h1, #proprietaire-elec-title
     @include flex(row, center, center);
     flex-wrap: nowrap;
     text-align: center;
-    padding: 8%;
+    padding: 5%;
     div
     {
       @media#{$desktop}

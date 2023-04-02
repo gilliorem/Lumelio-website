@@ -32,6 +32,10 @@ nav {
   box-shadow: 0 0 1px 1px #ffffff;
 }
 
+.nav-button:hover {
+  background-color: rgba(30, 18, 72, 0.7);
+}
+
 .nav-menu {
   transition: transform 1s ease-in-out;
   transform: translateX(-100%);

@@ -17,7 +17,7 @@ button:hover
     {
         display: none;
     }
-    @include button(fixed, 10em, 0%, $thirdColorTransparency, $firstColor, rgba(0,0,0,.1) solid 1px, 50%, 1.5em);
+    @include button(fixed, 10em, 0%, $secondColorTransparency, $firstColor, rgba(0,0,0,.1) solid 1px, 50%, 1.5em);
     z-index: 1;
     right: -10vh;
     height: 10em;
