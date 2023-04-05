@@ -150,7 +150,7 @@ h1, #proprietaire-elec-title
   {
     display: none;
   }
-  display: grid;
+  display: none;
   margin-inline: 5%;  
 }
 
@@ -251,7 +251,7 @@ h1, #proprietaire-elec-title
 
 .grid
 {
-  @media screen and (max-width: 768px) {
+  @media #{$mobile} {
     
       @include flex(column,center,center);
       grid-template-columns: 1fr;
@@ -278,20 +278,51 @@ h1, #proprietaire-elec-title
   padding: 3%;
 }
 
-.grid>.black
+.grid
 {
-  background-color: black;
-  color: white;
-}
+  .content-wrapper
+  {
+    .link-wrapper
+    {
+      display: flex;
+      justify-content: space-around;
+    }
+    button
+    {
+      margin: 5%;
+      padding: 2%;
+      border-radius: 1px;
+    }
+  }
 
-.grid>.white>h2,.grid>.white>h3
-{
-  color: black;
-}
+  .first, .last
+  {
+    background-color: $secondColorTransparency;
+    h2, h3, a, p
+    {
+      color: $firstColor;
+    }
+  }
 
-.grid>.black>h2,.grid>.black>h3
-{
-  color: white;
+  .second, .third
+  {
+    background-color: $firstColor;
+    h2, h3, a, p
+    {
+      color: white;
+    }
+    button
+    {
+      background-color: $secondColor;
+      color: $firstColor;
+    }
+    button:hover
+    {
+      box-shadow: 0px 0px 20px 1px rgb($secondColor, 30%);
+
+    }
+  }
+  
 }
 
 .grid>.content-wrapper>.image-wrapper
@@ -306,11 +337,7 @@ h1, #proprietaire-elec-title
   max-width: 75%;
 }
 
-.grid>.content-wrapper>.link-wrapper
-{
-  display: flex;
-  justify-content: space-around;
-}
+
 
 
 

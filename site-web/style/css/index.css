@@ -720,7 +720,7 @@ h1, #proprietaire-elec-title {
 }
 
 .article-section {
-  display: grid;
+  display: none;
   margin-inline: 5%;
 }
 @media(max-width: 768px) {
@@ -817,7 +817,7 @@ h1, #proprietaire-elec-title {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .grid {
     display: flex;
     flex-direction: column;
@@ -843,17 +843,33 @@ h1, #proprietaire-elec-title {
   padding: 3%;
 }
 
-.grid > .black {
-  background-color: black;
+.grid .content-wrapper .link-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.grid .content-wrapper button {
+  margin: 5%;
+  padding: 2%;
+  border-radius: 1px;
+}
+.grid .first, .grid .last {
+  background-color: rgba(255, 237, 0, 0.7);
+}
+.grid .first h2, .grid .first h3, .grid .first a, .grid .first p, .grid .last h2, .grid .last h3, .grid .last a, .grid .last p {
+  color: #1E1248;
+}
+.grid .second, .grid .third {
+  background-color: #1E1248;
+}
+.grid .second h2, .grid .second h3, .grid .second a, .grid .second p, .grid .third h2, .grid .third h3, .grid .third a, .grid .third p {
   color: white;
 }
-
-.grid > .white > h2, .grid > .white > h3 {
-  color: black;
+.grid .second button, .grid .third button {
+  background-color: #ffed00;
+  color: #1E1248;
 }
-
-.grid > .black > h2, .grid > .black > h3 {
-  color: white;
+.grid .second button:hover, .grid .third button:hover {
+  box-shadow: 0px 0px 20px 1px rgba(255, 237, 0, 0.3);
 }
 
 .grid > .content-wrapper > .image-wrapper {
@@ -864,11 +880,6 @@ h1, #proprietaire-elec-title {
 
 .grid > .content-wrapper > .image-wrapper > img {
   max-width: 75%;
-}
-
-.grid > .content-wrapper > .link-wrapper {
-  display: flex;
-  justify-content: space-around;
 }
 
 .form-section {
