@@ -5,7 +5,7 @@
 @import "./button.scss";
 @import "./nav-bar-style.scss";
 
-@media screen and (min-width: 768px)
+@media #{$desktop}
 {
   .mobile
   {
@@ -158,12 +158,11 @@ section
 
 .header-wrapper
 {
-  @media#{$desktop}
-  {
+  
     background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
     background-size: 100% ;
     background-repeat: no-repeat;
-  }
+  
 }
 
 footer

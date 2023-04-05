@@ -1,8 +1,6 @@
 @import "../main.scss";
-@import "../mixins.scss";
-@import "../button.scss";
-@import "../variable.scss";
-@import "../nav-bar-style.scss";
+
+
 
 #offre-essentielle-image
 {
@@ -11,9 +9,7 @@
 
 .offre
 {
-  background-image: url('./media/dessin/solar-eco-score.png');
   background-position: center;
   background-repeat: no-repeat;
 
 }
-

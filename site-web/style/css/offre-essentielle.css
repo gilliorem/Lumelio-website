@@ -1,118 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Secular+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  .mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 100%;
-  }
-  .mobile .header-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin: 1em;
-  }
-  .mobile .header-wrapper img {
-    width: 50%;
-  }
-  .mobile h1 {
-    margin: 0.5em;
-    text-align: start;
-    color: white;
-    font-size: 2.5em;
-  }
-  .mobile h1 span {
-    display: contents;
-    color: yellow;
-  }
-  .mobile h5 {
-    text-align: start;
-    color: white;
-    font-size: 1.25em;
-    font-weight: 500;
-  }
-  .mobile h5 span {
-    display: contents;
-    color: yellow;
-  }
-  .content-wrapper {
-    width: -webkit-fill-available;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .carac {
-    align-items: flex-start;
-  }
-  .image-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  footer > .symbols {
-    display: flex;
-    flex-direction: column;
-  }
-  .bubble-button {
-    width: 6em;
-    height: 6em;
-    right: -4vh;
-    font-size: 1.5em;
-    padding: 0.5em;
-    padding-right: 1em;
-  }
-  .heading-wrapper {
-    text-align: left;
-  }
-  .heading-left {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
-  }
-  .heading-left > .text-wrapper {
-    grid-column: 1;
-  }
-  .heading-left > .image-wrapper {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .heading-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr;
-  }
-  .grid > .content-wrapper {
-    width: 100%;
-  }
-  .heading-right > .image-wrapper {
-    grid-column: 1;
-  }
-  .heading-right > .text-wrapper {
-    grid-column: 2;
-    grid-row: 1;
-  }
   #solar-investment-image {
     width: 50%;
   }
@@ -136,20 +24,6 @@
     padding: 5%;
     text-align: center;
   }
-  .grid > .white > #pro-grid-title2, .grid > .white > #pro-grid-title3 {
-    color: white;
-  }
-  .grid > .black > #offre-essentielle-grid-title2, .grid > .black > #offre-essentielle-grid-title3 {
-    color: black;
-  }
-  .grid > #professionnels-grid {
-    background-color: black;
-    color: white;
-  }
-  .grid > #offre-essentielle-grid {
-    background-color: white;
-    color: black;
-  }
   .avis-wrapper {
     flex-direction: column;
   }
@@ -169,25 +43,6 @@
   #stockage-header {
     display: flex;
   }
-  nav {
-    display: none;
-  }
-  #stockage-cta-button {
-    display: none;
-  }
-  #index-header {
-    background-image: url("../../media/photo/phone-background.png");
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-  }
-  nav, #header-video {
-    display: none;
-  }
-  .title-section > img {
-    display: none;
-  }
   #revente-section {
     background-image: none;
     background-color: white;
@@ -205,6 +60,12 @@
     display: block;
     width: 90%;
   }
+  section.heading-left > .image-wrapper > img {
+    width: 90%;
+  }
+  #heading-wrapper-pro {
+    width: 70%;
+  }
 }
 #phone-link {
   width: 20px;
@@ -213,12 +74,11 @@
 
 button {
   position: relative;
-  width: 300px;
+  width: fit-content;
   padding: 2%;
-  background-color: #1E1248;
+  background-color: rgba(30, 18, 72, 0.7);
   color: #ffed00;
   border: none;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   font-size: 1.1em;
 }
@@ -226,7 +86,7 @@ button {
 button:hover {
   cursor: pointer;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
-  transition: 1s;
+  background-color: #1E1248;
 }
 
 .bubble-button {
@@ -236,24 +96,104 @@ button:hover {
   background-color: rgba(255, 237, 0, 0.7);
   color: #1E1248;
   border: rgba(0, 0, 0, 0.1) solid 1px;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   font-size: 1.5em;
-  top: vh;
+  z-index: 1;
   right: -10vh;
   height: 10em;
   padding-right: 7%;
   font-weight: 500;
 }
-
-.bubble-button:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
-  transition: 1s;
-  border: rgba(0, 0, 0, 0.4) solid 1px;
+@media (max-width: 768px) {
+  .bubble-button {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 768px) {
+.bubble-button:hover {
+  border: rgba(0, 0, 0, 0.4) solid 1px;
+  background-color: #ffed00;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav {
+  z-index: 1;
+  position: absolute;
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
+.nav-button {
+  position: relative;
+  width: fit-content;
+  padding: 5%;
+  background-color: transparent;
+  color: #1E1248;
+  border: none;
+  border-radius: 5px;
+  font-size: 3em;
+  box-shadow: 0 0 1px 1px #ffffff;
+}
+
+.nav-button:hover {
+  background-color: rgba(30, 18, 72, 0.7);
+}
+
+.nav-menu {
+  transition: transform 1s ease-in-out;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 50vh;
+  font-size: 1.5em;
+  position: absolute;
+  top: 8.6vh;
+  left: 0vh;
+  flex-direction: column;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.nav-menu.show {
+  transform: translateX(0);
+}
+
+.nav-li {
+  font-weight: 500;
+  text-align: start;
+  padding-left: 1%;
+}
+
+.cross-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3%;
+  margin-bottom: -10%;
+}
+.cross-wrapper .cross-menu {
+  position: relative;
+  width: fit-content;
+  padding: 2%;
+  background-color: transparent;
+  color: #1E1248;
+  border: white solid 1px;
+  border-radius: 5px;
+  font-size: 1.3em;
+}
+
+@media (min-width:769px) {
   .mobile {
     display: none;
   }
@@ -271,6 +211,7 @@ html, body {
 }
 
 a {
+  width: 100%;
   text-decoration: none;
   color: #00b1eb;
 }
@@ -306,15 +247,26 @@ footer > .footer-end > ul > li > a:hover {
   align-content: flex-end;
 }
 
+h1 {
+  font-size: 3em;
+  color: #1E1248;
+  margin: 4%;
+}
+
 h2 {
   font-size: 2.3em;
-  color: black;
+  color: #1E1248;
   margin: 3%;
+}
+@media(max-width: 768px) {
+  h2 {
+    text-align: center;
+  }
 }
 
 h3 {
   font-size: 1.7em;
-  color: #1E1248;
+  color: #ffed00;
   margin-block: 2.5%;
 }
 
@@ -343,7 +295,6 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
 }
 
 .heading-center-image {
@@ -354,8 +305,31 @@ li {
 }
 
 section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin-block: 2em;
   position: relative;
+}
+@media(max-width: 768px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.content-wrapper .first, .content-wrapper .second {
+  width: 90%;
 }
 
 .heading-wrapper {
@@ -365,6 +339,12 @@ section {
   align-items: center;
   flex-wrap: wrap;
   text-align: justify;
+}
+
+.header-wrapper {
+  background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 footer {
@@ -504,130 +484,103 @@ footer > .symbols > .image-wrapper > img {
   margin-block-start: 5%;
 }
 
-button {
-  position: relative;
-  width: 300px;
-  padding: 2%;
-  background-color: #1E1248;
-  color: #ffed00;
-  border: none;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 1.1em;
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .mobile .header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 1em;
+  }
+  .mobile .header-wrapper img {
+    width: 50%;
+  }
+  .mobile .header-wrapper .lumelio-titre-blanc-jaune {
+    width: 20%;
+  }
+  .mobile h1 {
+    margin: 0.5em;
+    text-align: start;
+    color: white;
+    font-size: 2.5em;
+  }
+  .mobile h1 span {
+    display: contents;
+    color: yellow;
+  }
+  .mobile h5 {
+    text-align: start;
+    color: white;
+    font-size: 1.75em;
+    font-weight: 500;
+  }
+  .mobile h5 span {
+    display: contents;
+    color: yellow;
+  }
+  .content-wrapper {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .carac {
+    align-items: flex-start;
+  }
+  .image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer > .symbols {
+    display: flex;
+    flex-direction: column;
+  }
+  .heading-wrapper {
+    text-align: left;
+  }
+  .heading-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+  }
+  .heading-left > .text-wrapper {
+    grid-column: 1;
+  }
+  .heading-left > .image-wrapper {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .heading-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
-
-button:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
-  transition: 1s;
-}
-
-.bubble-button {
-  position: fixed;
-  width: 10em;
-  padding: 0%;
-  background-color: rgba(255, 237, 0, 0.7);
-  color: #1E1248;
-  border: rgba(0, 0, 0, 0.1) solid 1px;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  font-size: 1.5em;
-  top: vh;
-  right: -10vh;
-  height: 10em;
-  padding-right: 7%;
-  font-weight: 500;
-}
-
-.bubble-button:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
-  transition: 1s;
-  border: rgba(0, 0, 0, 0.4) solid 1px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-nav {
-  z-index: 1;
-  position: absolute;
-  padding-top: 2%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.nav-button {
-  position: relative;
-  width: fit-content;
-  padding: 5%;
-  background-color: transparent;
-  color: #1E1248;
-  border: none;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 3em;
-}
-
-.nav-button:hover, a:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
-  transition: 1s;
-}
-
-.nav-menu {
-  transition: transform 1s ease-in-out;
-  transform: translateX(-100%);
-  width: 100%;
-  height: 50vh;
-  font-size: 1.5em;
-  position: absolute;
-  top: 8.6vh;
-  left: 0vh;
-  flex-direction: column;
-  background-color: #ffffff;
-  z-index: 1;
-}
-
-.nav-menu.show {
-  transform: translateX(0);
-}
-
-.nav-li {
-  font-weight: 500;
-  text-align: start;
-  padding-left: 1%;
-}
-
-.cross-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 3%;
-  margin-bottom: -10%;
-}
-.cross-wrapper .cross-menu {
-  position: relative;
-  width: fit-content;
-  padding: 2%;
-  background-color: transparent;
-  color: #1E1248;
-  border: white solid 1px;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 1.3em;
-}
-
 #offre-essentielle-image {
   width: 50%;
 }
 
 .offre {
-  background-image: url("./media/dessin/solar-eco-score.png");
   background-position: center;
   background-repeat: no-repeat;
 }

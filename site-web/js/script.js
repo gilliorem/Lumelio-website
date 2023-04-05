@@ -39,7 +39,6 @@ form.addEventListener('submit', function(e)
   const name = document.querySelector('#name').value;
   const mail = document.querySelector('#mail').value;
   const tel = document.querySelector('#tel').value;
-  const factureEDF = document.querySelector('#facture-edf');
   const textarea = document.querySelector('#textarea').value;
   
   
@@ -50,7 +49,6 @@ form.addEventListener('submit', function(e)
     nom : name,
     mail : mail,
     tel : tel,
-    factureEDF : factureEDF,
     demande : textarea
   }
   

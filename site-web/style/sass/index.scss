@@ -297,7 +297,7 @@ h1, #proprietaire-elec-title
 
   .first, .last
   {
-    background-color: $secondColorTransparency;
+    background-color:$secondColorTransparency;
     h2, h3, a, p
     {
       color: $firstColor;
@@ -434,6 +434,10 @@ form
   flex-direction: row;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+  }
+  .content-wrapper
+  {
+    flex-wrap: wrap;
   }
 }
 

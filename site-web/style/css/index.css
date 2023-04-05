@@ -24,20 +24,6 @@
     padding: 5%;
     text-align: center;
   }
-  .grid > .white > #pro-grid-title2, .grid > .white > #pro-grid-title3 {
-    color: white;
-  }
-  .grid > .black > #offre-essentielle-grid-title2, .grid > .black > #offre-essentielle-grid-title3 {
-    color: black;
-  }
-  .grid > #professionnels-grid {
-    background-color: black;
-    color: white;
-  }
-  .grid > #offre-essentielle-grid {
-    background-color: white;
-    color: black;
-  }
   .avis-wrapper {
     flex-direction: column;
   }
@@ -207,7 +193,7 @@ nav {
   font-size: 1.3em;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width:769px) {
   .mobile {
     display: none;
   }
@@ -355,12 +341,10 @@ section {
   text-align: justify;
 }
 
-@media(min-width:769px) {
-  .header-wrapper {
-    background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
+.header-wrapper {
+  background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 footer {
@@ -981,6 +965,9 @@ form button {
   .avis-wrapper {
     flex-direction: column;
   }
+}
+.avis-wrapper .content-wrapper {
+  flex-wrap: wrap;
 }
 
 .avis-section > .image-wrapper > img {
