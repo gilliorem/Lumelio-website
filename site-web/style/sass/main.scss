@@ -158,11 +158,12 @@ section
 
 .header-wrapper
 {
-  
+  @media#{$desktop}
+  {
     background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
     background-size: 100% ;
     background-repeat: no-repeat;
-  
+  }  
 }
 
 footer
