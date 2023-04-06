@@ -64,7 +64,7 @@ class Interface
             }
             app.dashboard.show();
             this.hide();
-        })
+        });
     }
 }
 
@@ -74,7 +74,6 @@ class Connexion extends Interface
     constructor()
     {
         super("Welcome");
-
     }
 
     draw(interfaceName)
@@ -93,6 +92,11 @@ class Connexion extends Interface
             let id = JSON.parse(storedId);
             this.usernameInput.value = id.username;
             this.passwordInput.value = id.password;
+            window.addEventListener("load",()=>
+            {
+                app.dashboard = new Dashboard();
+                super.hide(interfaceName);
+            });
         }
     }
     
@@ -127,6 +131,7 @@ class Connexion extends Interface
         })
     }
 
+
     setAccount(button)
     {
         button.addEventListener("click",()=>
@@ -154,7 +159,6 @@ class CreateAccount extends Interface
         this.confirmPasswordInput = createInputElement(this.newInterface, 'password', 'Confirme mot de Passe', ["password-input"] );
         this.createAccountButton = createButton(this.newInterface, "Create Account", ["new-account-button"]);
         this.backToConnectionInterfaceButton = createButton(this.newInterface, "back to Connection interface", ["back-to-Connection-interface-button"]);
-        this.backToConnectionInterfaceButton.style.display = "none";
         this.setAccount(this.createAccountButton);
         this.setConnectionInterface(this.backToConnectionInterfaceButton);
         
@@ -231,13 +235,20 @@ class Dashboard extends Interface
     draw()
     {
         super.draw();
-        this.dashboardDiv = createDiv(this.newInterface, "Welcome username", ["dashboard-div"]);
+        let profile = localStorage.getItem("profile");
+        if(profile)
+        {
+            let profileParsed = JSON.parse(profile);
+            this.dashboardDiv = createDiv(this.newInterface, "Welcome " + profileParsed.nom, ["dashboard-div"]);
+        }
         this.profileButton = createButton(this.newInterface,"profile",["profile-button"]);
         this.prospectionButton = createButton(this.newInterface,"prospection",["prospection-button"]);
         this.chiffreButton = createButton(this.newInterface,"chiffre",["chiffre-button"]);
         this.agendaButton = createButton(this.newInterface,"agenda",["agenda-button"]);
-        this.buttons = [this.profileButton, this.prospectionButton, this.chiffreButton, this.agendaButton];
-        this.setEvent(this.buttons)
+        this.disconnectButton = createButton(this.newInterface,"disconnect",["disconnect-button"]);
+        this.buttons = [this.profileButton, this.prospectionButton, this.chiffreButton, this.agendaButton, this.disconnectButton];
+        this.setEvent(this.buttons);
+        
 
     }
     setEvent()
@@ -277,6 +288,13 @@ class Dashboard extends Interface
             }
             app.agenda.show();
         })
+        
+        this.disconnectButton.addEventListener("click",()=>
+        {            
+            app.connectionInterface.show();
+            localStorage.clear();
+            location.reload();
+        })
     }
 }
 
@@ -312,6 +330,7 @@ class Profile extends Interface
             this.nameInput.value = profile.nom;
             this.telInput.value = profile.tel;
             this.select.value = profile.role;
+
         }
     }
 
@@ -330,10 +349,15 @@ class Profile extends Interface
             }
             app.dashboard.show();
             this.hide();
+            if(this.profileModified)
+            {
+                location.reload();
+            }
         })
     }
     setInfo(button)
     {
+        this.profileModified = false;
         button.addEventListener("click",()=>
         {
             let profile = 
@@ -350,7 +374,8 @@ class Profile extends Interface
             {
                 console.log(response);
                 this.profileUpdateMessage = createTitle(this.profileDiv, "Profil mis à jour.", ["update-profile-title"])
-            })
+                this.profileModified = true;
+            });
 
             
         })
@@ -419,15 +444,15 @@ class Chiffre extends Interface
 {
     constructor()
     {
-        super("Chiffre")
+        super("Numbers")
     }
     draw()
     {
         super.draw();
         this.chiffreDiv = createDiv(this.newInterface, "", ["chiffre-div"]);
+        this.chiffreTitle = createTitle(this.chiffreDiv, "Chiffre", ["chiffre-title"]);
         this.backToDashboard = createButton(this.chiffreDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
         this.setDashboard(this.backToDashboard);
-        this.chiffreTitle = createTitle(this.chiffreDiv, "Chiffre", ["chiffre-title"]);
 
     }
    
