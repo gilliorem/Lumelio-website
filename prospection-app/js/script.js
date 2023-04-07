@@ -241,34 +241,26 @@ class Dashboard extends Interface
             let profileParsed = JSON.parse(profile);
             this.dashboardDiv = createDiv(this.newInterface, "Welcome " + profileParsed.nom, ["dashboard-div"]);
         }
-        this.profileButton = createButton(this.newInterface,"profile",["profile-button"]);
-        this.prospectionButton = createButton(this.newInterface,"prospection",["prospection-button"]);
-        this.chiffreButton = createButton(this.newInterface,"chiffre",["chiffre-button"]);
         this.agendaButton = createButton(this.newInterface,"agenda",["agenda-button"]);
+        this.chiffreButton = createButton(this.newInterface,"chiffre",["chiffre-button"]);
+        this.priseDeRdvButton = createButton(this.newInterface,"prise-de-rdv",["prise-de-rdv-button"]);
+        this.prospectionButton = createButton(this.newInterface,"prospection",["prospection-button"]);
+        this.profileButton = createButton(this.newInterface,"profile",["profile-button"]);
         this.disconnectButton = createButton(this.newInterface,"disconnect",["disconnect-button"]);
-        this.buttons = [this.profileButton, this.prospectionButton, this.chiffreButton, this.agendaButton, this.disconnectButton];
+        this.buttons = [this.profileButton, this.priseDeRdvButton, this.chiffreButton, this.agendaButton, this.disconnectButton];
         this.setEvent(this.buttons);
         
 
     }
     setEvent()
     {
-        this.profileButton.addEventListener("click",()=>
+        this.agendaButton.addEventListener("click",()=>
         {
-            if(!app.profile)
+            if(!app.agenda)
             {
-                app.profile = new Profile();
+                app.agenda = new Agenda();
             }
-            app.profile.show();
-        });
-
-        this.prospectionButton.addEventListener("click",()=>
-        {
-            if(!app.prospection)
-            {
-                app.prospection = new Prospection();
-            }
-            app.prospection.show();
+            app.agenda.show();
         });
 
         this.chiffreButton.addEventListener("click",()=>
@@ -280,14 +272,32 @@ class Dashboard extends Interface
             app.chiffre.show();
         });
 
-        this.agendaButton.addEventListener("click",()=>
+        this.priseDeRdvButton.addEventListener("click",()=>
         {
-            if(!app.agenda)
+            if(!app.priseDeRdv)
             {
-                app.agenda = new Agenda();
+                app.priseDeRdv = new Rdv();
             }
-            app.agenda.show();
-        })
+            app.priseDeRdv.show();
+        });
+
+        this.prospectionButton.addEventListener("click",()=>
+        {
+            if(!app.prospection)
+            {
+                app.prospection = new Prospection();
+            }
+            app.prospection.show();
+        });
+
+        this.profileButton.addEventListener("click",()=>
+        {
+            if(!app.profile)
+            {
+                app.profile = new Profile();
+            }
+            app.profile.show();
+        });
         
         this.disconnectButton.addEventListener("click",()=>
         {            
@@ -295,6 +305,116 @@ class Dashboard extends Interface
             localStorage.clear();
             location.reload();
         })
+    }
+}
+
+class Agenda extends Interface
+{
+    constructor()
+    {
+        super("Agenda")
+    }
+    draw()
+    {
+        super.draw();
+        this.agendaDiv = createDiv(this.newInterface, "", ["agenda-div"]);
+        this.agendaTitle = createTitle(this.agendaDiv, "Agenda", ["agenda-title"]);
+        this.backToDashboard = createButton(this.agendaDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
+        this.setDashboard(this.backToDashboard);
+        
+    }
+}
+
+class Chiffre extends Interface
+{
+    constructor()
+    {
+        super("Numbers")
+    }
+    draw()
+    {
+        super.draw();
+        this.chiffreDiv = createDiv(this.newInterface, "", ["chiffre-div"]);
+        this.chiffreTitle = createTitle(this.chiffreDiv, "Chiffre", ["chiffre-title"]);
+        this.backToDashboard = createButton(this.chiffreDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
+        this.setDashboard(this.backToDashboard);
+    }
+   
+}
+
+class Rdv extends Interface
+{
+    constructor()
+    {
+        super("Rdv")
+    }
+    draw()
+    {
+        super.draw();
+        this.priseDeRdvDiv = createDiv(this.newInterface, "", ["priseDeRdv-div"]);
+        this.priseDeRdvTitle = createTitle(this.priseDeRdvDiv, "Rdv", ["priseDeRdv-title"]);
+        this.label = createHtmlElement('label', this.priseDeRdvDiv, "Statut Rdv:", ['label-prospect']);
+        this.select = createHtmlElement('select', this.label, "", ['statut-selection']);
+        this.optionRdv = createOption(this.select, "Prise de RDV", "Prise de RDV", ["selection-option"]);
+        this.optionRefus = createOption(this.select, "Refus", "Refus", ["refus-option"]);
+        this.optionHorsCible = createOption(this.select, "Hors-cible", "hors-cible", ["hors-cible-option"]);
+        this.factureInput = createInputElement(this.priseDeRdvDiv, 'montant facture EDF', 'montant facture', ["facture-input"] );
+        this.nameInput = createInputElement(this.priseDeRdvDiv, 'text', 'nom complet (très important)', ["name-input"] );
+        this.telInput = createInputElement(this.priseDeRdvDiv, 'tel', 'numero de telephone', ["phone-input"] );
+        this.adressInput = createInputElement(this.priseDeRdvDiv, 'adress', 'adresse', ["adresse-input"] );
+        this.dateInput = createInputElement(this.priseDeRdvDiv, 'datetime-local', 'date', ["date-time-input"] );
+
+        
+        this.submitButton = createButton(this.newInterface, "valider", "submit-button");
+        this.setDataToServer(this.submitButton);
+
+        this.backToDashboard = createButton(this.priseDeRdvDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
+        this.setDashboard(this.backToDashboard);
+    }
+    setDataToServer(button)
+    {
+        button.addEventListener("click",()=>
+        {
+            let dataClient =
+            {
+                result : this.select.value,
+                facture : this.factureInput.value,
+                nom : this.nameInput.value,
+                tel : this.telInput.value,
+                adress : this.adressInput.value,
+                date : this.dateInput.valueAsNumber/1000
+            };
+
+            localStorage.setItem("dataClient", JSON.stringify(dataClient));
+
+            app.request("./dataClient.php", dataClient,(response)=>
+             {
+                console.log(response);
+                this.dataSavecMessage = createDiv(this.priseDeRdvDiv, response, ['data-saved-msg']);
+            })
+        })
+    }
+    
+    
+}
+
+class Prospection extends Interface
+{
+    constructor()
+    {
+        super("Prospection");
+    }
+
+    draw()
+    {
+        super.draw();
+        this.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
+        this.prospectionTitle = createTitle(this.prospectionDiv, "Prospection", ["prospection-title"]);
+        this.streetInput = createInputElement(this.prospectionDiv, 'text', 'nom de la rue', ["street-input"] );
+        this.cityInput = createInputElement(this.prospectionDiv, 'text', 'nom de la ville', ["city-input"] );
+        this.searchButton = createButton(this.prospectionDiv, "search", ["search-address-button"]);
+        this.backToDashboard = createButton(this.prospectionDiv, "back to dashboard", ["back-todashboard-interface-button"]);
+        this.setDashboard(this.backToDashboard);
     }
 }
 
@@ -333,11 +453,7 @@ class Profile extends Interface
 
         }
     }
-
-
     
-    
-
     setDashboard(button)
     {
         button.addEventListener("click",()=>
@@ -384,102 +500,4 @@ class Profile extends Interface
     
 }
 
-class Prospection extends Interface
-{
-    constructor()
-    {
-        super("Prospection")
-    }
-    draw()
-    {
-        super.draw();
-        this.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
-        this.prospectionTitle = createTitle(this.prospectionDiv, "Prospection", ["prospection-title"]);
-        this.label = createHtmlElement('label', this.prospectionDiv, "Statut Prospection:", ['label-prospect']);
-        this.select = createHtmlElement('select', this.label, "", ['statut-selection']);
-        this.optionRdv = createOption(this.select, "Prise de RDV", "Prise de RDV", ["selection-option"]);
-        this.optionRefus = createOption(this.select, "Refus", "Refus", ["refus-option"]);
-        this.optionHorsCible = createOption(this.select, "Hors-cible", "hors-cible", ["hors-cible-option"]);
-        this.factureInput = createInputElement(this.prospectionDiv, 'montant facture EDF', 'montant facture', ["facture-input"] );
-        this.nameInput = createInputElement(this.prospectionDiv, 'text', 'nom complet (très important)', ["name-input"] );
-        this.telInput = createInputElement(this.prospectionDiv, 'tel', 'numero de telephone', ["phone-input"] );
-        this.adressInput = createInputElement(this.prospectionDiv, 'adress', 'adresse', ["adresse-input"] );
-        this.dateInput = createInputElement(this.prospectionDiv, 'datetime-local', 'date', ["date-time-input"] );
-
-        
-        this.submitButton = createButton(this.newInterface, "valider", "submit-button");
-        this.setDataToServer(this.submitButton);
-
-        this.backToDashboard = createButton(this.prospectionDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
-        this.setDashboard(this.backToDashboard);
-    }
-    setDataToServer(button)
-    {
-        button.addEventListener("click",()=>
-        {
-            let dataClient =
-            {
-                result : this.select.value,
-                facture : this.factureInput.value,
-                nom : this.nameInput.value,
-                tel : this.telInput.value,
-                adress : this.adressInput.value,
-                date : this.dateInput.valueAsNumber/1000
-            };
-
-            localStorage.setItem("dataClient", JSON.stringify(dataClient));
-
-            app.request("./dataClient.php", dataClient,(response)=>
-             {
-                console.log(response);
-                this.dataSavecMessage = createDiv(this.prospectionDiv, response, ['data-saved-msg']);
-            })
-        })
-    }
-    
-    
-}
-
-class Chiffre extends Interface
-{
-    constructor()
-    {
-        super("Numbers")
-    }
-    draw()
-    {
-        super.draw();
-        this.chiffreDiv = createDiv(this.newInterface, "", ["chiffre-div"]);
-        this.chiffreTitle = createTitle(this.chiffreDiv, "Chiffre", ["chiffre-title"]);
-        this.backToDashboard = createButton(this.chiffreDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
-        this.setDashboard(this.backToDashboard);
-
-    }
-   
-}
-
-class Agenda extends Interface
-{
-    constructor()
-    {
-        super("Agenda")
-    }
-    draw()
-    {
-        super.draw();
-        this.agendaDiv = createDiv(this.newInterface, "", ["agenda-div"]);
-        this.agendaTitle = createTitle(this.agendaDiv, "Agenda", ["agenda-title"]);
-        this.backToDashboard = createButton(this.agendaDiv, "back to dashboard", ["back-to-dashboard-interface-button"]);
-        this.setDashboard(this.backToDashboard);
-        
-    }
-}
-
-
 window.app.connectionInterface = new Connexion();
-
-
-
-
-
-// formulaire prospection : logic du profile
