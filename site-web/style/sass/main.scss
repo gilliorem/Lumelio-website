@@ -27,6 +27,98 @@ html, body
   font-size: 16px;
 }
 
+
+header
+{
+  position: relative;
+  min-width: 100%;
+  min-height: 200px;
+  height: 500px;
+  text-align: center;
+  @media #{$mobile}
+  {
+    background-image: url('../../media/photo/phone-background.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:right;
+  }
+  .cta-button
+  {
+    background-color: $secondColor;
+    color: $firstColor;
+    box-shadow: none;
+    border-radius: 1px;
+  }
+}
+
+.heading-wrapper
+{
+  @include flex(row,center,center);
+  flex-wrap: wrap;
+  text-align: justify;
+}
+
+.heading-wrapper
+{
+  @media#{$desktop}
+  {
+    background-size: 100% ;
+    background-repeat: no-repeat;
+  }  
+}
+
+.mobile-header 
+  {
+      @include flex(column, center, center) ;
+      width: 100%;
+      .heading-wrapper
+      {
+        @include flex(row, space-around, center);
+        width: 80%;
+        margin: 1em;
+        flex-wrap: nowrap;
+        img
+        {
+          width:50%;
+        }
+
+        .lumelio-titre-blanc-jaune
+        {
+        width: 20%;
+        }
+        a
+        {
+          width:fit-content;
+        }
+      }
+
+    h1
+    {
+      margin: .5em;
+      text-align:start;
+      color: white;
+      font-size: 2.5em;
+      span
+      {
+        display: contents;
+        color: yellow;
+      }
+    }
+    h5
+    {
+      text-align: start;
+      color: white;
+      font-size: 1.75em;
+      font-weight: 500;
+      span
+      {
+        display: contents;
+        color: yellow;
+      }
+    }
+  }
+
 a
 {
   width: 100%;
@@ -149,22 +241,6 @@ section
 
 
 
-.heading-wrapper
-{
-  @include flex(row,center,center);
-  flex-wrap: wrap;
-  text-align: justify;
-}
-
-.header-wrapper
-{
-  @media#{$desktop}
-  {
-    background-image: url("../../media/photo/chantier-solaire-estevelles.jpg");
-    background-size: 100% ;
-    background-repeat: no-repeat;
-  }  
-}
 
 footer
 {
@@ -325,52 +401,7 @@ footer>.symbols>.image-wrapper>img
     font-size: 14px;
   }
   
-  .mobile 
-  {
-      @include flex(column, center, center) ;
-      width: 100%;
-      .header-wrapper
-      {
-        @include flex(row, space-around, center);
-        width: 80%;
-        margin: 1em;
-        img
-        {
-          width:50%;
-        }
-
-        .lumelio-titre-blanc-jaune
-      {
-      width: 20%;
-      }
-
-        
-      }
-    h1
-    {
-      margin: .5em;
-      text-align:start;
-      color: white;
-      font-size: 2.5em;
-      span
-      {
-        display: contents;
-        color: yellow;
-      }
-    }
-    h5
-    {
-      text-align: start;
-      color: white;
-      font-size: 1.75em;
-      font-weight: 500;
-      span
-      {
-        display: contents;
-        color: yellow;
-      }
-    }
-  }
+  
   .content-wrapper
   {
     width: -webkit-fill-available;

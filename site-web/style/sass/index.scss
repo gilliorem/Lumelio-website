@@ -1,29 +1,6 @@
 @import "./main.scss";
 
 
-#index-header
-{
-  position: relative;
-  min-width: 100%;
-  min-height: 200px;
-  height: 500px;
-  text-align: center;
-  @media #{$mobile}
-  {
-    background-image: url('../../media/photo/phone-background.png');
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:right;
-  }
-  .cta-button
-  {
-    background-color: $secondColor;
-    color: $firstColor;
-    box-shadow: none;
-    border-radius: 1px;
-  }
-}
 
 
 
