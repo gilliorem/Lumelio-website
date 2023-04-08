@@ -1,27 +1,5 @@
 @import "../main.scss";
 
-
-#stockage-header
-{
-  height: 30vh;
-  align-items: flex-start;
-}
-
-.stockage-h1
-{
-  color: white;
-  margin-top: 10%;
-  span
-  {
-    color: $secondColor;
-  }
-}
-
-#heading-wrapper-stockage
-{
-  text-align: left;
-}
-
 .stockage 
 {
   p

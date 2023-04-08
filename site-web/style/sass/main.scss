@@ -30,10 +30,11 @@ html, body
 
 header
 {
+  display: flex;
   position: relative;
   min-width: 100%;
-  min-height: 200px;
-  height: 500px;
+  min-height: 10vh;
+  height: auto;
   text-align: center;
   @media #{$mobile}
   {
@@ -57,10 +58,6 @@ header
   @include flex(row,center,center);
   flex-wrap: wrap;
   text-align: justify;
-}
-
-.heading-wrapper
-{
   @media#{$desktop}
   {
     background-size: 100% ;
@@ -70,29 +67,28 @@ header
 
 .mobile-header 
   {
-      @include flex(column, center, center) ;
-      width: 100%;
-      .heading-wrapper
+    @include flex(column, space-around, center) ;
+    width: 100%;
+    .heading-wrapper
       {
-        @include flex(row, space-around, center);
-        width: 80%;
-        margin: 1em;
-        flex-wrap: nowrap;
-        img
-        {
-          width:50%;
-        }
-
-        .lumelio-titre-blanc-jaune
-        {
-        width: 20%;
-        }
-        a
-        {
-          width:fit-content;
-        }
+      @include flex(row, space-around, center);
+      width: 100%;
+      margin: 1em;
+      flex-wrap: nowrap;
+      img
+      {
+        width:50%;
       }
 
+      .lumelio-titre-blanc-jaune
+      {
+      width: 20%;
+      }
+      a
+      {
+        width:fit-content;
+      }
+    }
     h1
     {
       margin: .5em;
@@ -116,6 +112,10 @@ header
         display: contents;
         color: yellow;
       }
+    }
+    @media#{$desktop}
+    {
+      display: none;
     }
   }
 
