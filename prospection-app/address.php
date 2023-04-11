@@ -1,7 +1,9 @@
 <?php
 
-$data = json_decode(file_get_contents('php://input'),true);
-$city = $data['city'];
+$request_body = file_get_contents('php://input');
+$request_data = json_decode($request_body, true);
+$city_name = $request_data['city_name'];
+
 
 $addresses = [
     'Lille' => [
@@ -22,17 +24,21 @@ $addresses = [
 ];
 
 
-if (isset($addresses[$city]))
+if (isset($_POST['city_name']))
 {
-    $streets = $addresses[$city];
-    $response = [];
+    $city_name = $_POST['city_name'];
 
-    foreach($streets as $street =>$numbers)
+    if(isset($addresses[$city_name]))
+    {
+        $streets = $addresses[$city_name];
+        $response = [];
+
+        foreach($streets as $street =>$numbers)
     {
         $response[$street] = $numbers;
     }
-
     echo json_encode($response);
+    }
 }
 else
 {

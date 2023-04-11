@@ -408,42 +408,36 @@ class Prospection extends Interface
     draw()
     {
         super.draw();
-        app.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
-        this.prospectionTitle = createTitle(app.prospectionDiv, "Prospection", ["prospection-title"]);
-        this.cityInput = createInputElement(app.prospectionDiv, 'text', 'nom de la ville', ["city-input"] );
-        this.searchButton = createButton(app.prospectionDiv, "search", ["search-address-button"]);
-        this.backToDashboard = createButton(app.prospectionDiv, "back to dashboard", ["back-todashboard-interface-button"]);
+        this.prospectionDiv = createDiv(this.newInterface, "", ["prospection-div"]);
+        this.prospectionTitle = createTitle(this.prospectionDiv, "Prospection", ["prospection-title"]);
+        this.cityInput = createInputElement(this.prospectionDiv, 'text', 'nom de la ville', ["city-input"] );
+        this.displayCityButton = createButton(this.prospectionDiv, "afficher les villes", ["display-city-button"]);
+        this.searchButton = createButton(this.prospectionDiv, "search", ["search-address-button"]);
+        this.backToDashboard = createButton(this.prospectionDiv, "back to dashboard", ["back-todashboard-interface-button"]);
         this.setCityStreets(this.searchButton);
         this.setDashboard(this.backToDashboard);
+    }
+
+
+    displayCities(button)
+    {
+        button.addEventListener("click",()=>
+        {
+            let xhr = new XMLHttpRequest();
+            
+        })
     }
 
     setCityStreets(button)
     {
         button.addEventListener("click",()=>
         {
-            let data = 
-            {
-                city : this.cityInput.value
-            }
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "./address.php");
-            xhr.setRequestHeader("Content-type", "application/json");
-            xhr.onreadystatechange = function()
-            {
-                if (xhr.status == 200)
-                {
-                    let response = JSON.stringify(xhr.response);
-                    app.cityButton = createButton(app.prospectionDiv, response, ["city-button"]);
-                }
-                else
-                {
-                    console.log('request failes. ' + xhr.status);
-                }
-            };
+            
+        console.log(this.cityInput.value);
+          
+        }
+    )};
 
-        xhr.send(JSON.stringify(data));
-        })
-    }
 }
 
 class Profile extends Interface
