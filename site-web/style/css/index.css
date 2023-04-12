@@ -210,6 +210,19 @@ html, body {
   font-size: 16px;
 }
 
+img {
+  width: 80%;
+}
+@media(min-width:769px) {
+  img {
+    width: 50%;
+  }
+}
+
+a img {
+  width: 10%;
+}
+
 header {
   display: flex;
   position: relative;
@@ -327,6 +340,17 @@ header .cta-button {
   align-items: center;
   text-align: justify;
   margin: 10%;
+  margin-block: -10%;
+  margin-top: -20%;
+}
+@media(max-width: 768px) {
+  .review-section .p {
+    margin-top: -10%;
+  }
+}
+.review-section .index {
+  margin-block: 0;
+  margin-top: 0;
 }
 .review-section .quotation-mark {
   margin: -4%;
@@ -381,7 +405,13 @@ a:hover {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-block-end: 10%;
+  margin-block: 10%;
+}
+@media(max-width: 768px) {
+  .video-wrapper {
+    margin-block: 0%;
+    margin-bottom: 5%;
+  }
 }
 
 .video-wrapper > video {
@@ -532,6 +562,10 @@ footer > .lumelio-title {
   justify-content: center;
 }
 
+.lumelio-title img {
+  width: 20%;
+}
+
 footer > .symbols > .image-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -545,7 +579,7 @@ footer > .symbols {
 
 footer > .symbols > .image-wrapper > img {
   margin-right: 3%;
-  height: 25px;
+  width: 10%;
 }
 
 .footer-end {
@@ -610,6 +644,14 @@ footer > .symbols > .image-wrapper > img {
   align-items: center;
   flex-wrap: wrap;
   padding: 5%;
+}
+@media(max-width: 768px) {
+  .heading-left, .heading-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .heading-left > .heading-wrapper, .text-wrapper {
@@ -682,28 +724,6 @@ footer > .symbols > .image-wrapper > img {
   }
   .heading-wrapper {
     text-align: left;
-  }
-  .heading-left {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
-  }
-  .heading-left > .text-wrapper {
-    grid-column: 1;
-  }
-  .heading-left > .image-wrapper {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .heading-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
   }
 }
 h1, #proprietaire-elec-title {
@@ -1032,6 +1052,7 @@ form button {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  width: 70%;
 }
 
 .accreditation-section > .image-wrapper > .image-wrapper {

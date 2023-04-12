@@ -4,7 +4,14 @@
 {
   p
   {
-    width: 50%;
+
+    width: 80%;
+    text-align: justify;
+    margin-top: 10%;
+    @media#{$desktop}
+    {
+      width: 55%;
+    }
   }
 }
 
@@ -18,21 +25,47 @@ section.heading-right>.image-wrapper>img
   width: 80%;
 }
 
-#innovation-wrapper
+.design
 {
-  align-items: baseline;
+  @media#{$desktop}
+  {
+    align-items: flex-start;
+  }
+}
+
+.batterie, .performance
+{
+  justify-content: space-around;
+  p{
+    @media#{$mobile}
+    {
+      margin: 10%;
+    }
+  }
+}
+
+
+#coffret
+{
+  @media#{$desktop}
+  {
+    display: none;
+  }
+}
+
+#ugc-image
+{
+  @media#{$mobile}
+  {
+    display: none;
+  }
+  width: 17%;
 }
 
 #monitoring-image
 {
   height: 400px;
   width: auto;
-}
-
-#decompo-bi-verre-phone
-{
-  display: none;
-  margin-block-end: 10%;
 }
 
 

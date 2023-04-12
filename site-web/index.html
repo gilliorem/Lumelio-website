@@ -20,12 +20,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <header id="index-header" class="reveal">
-            <div class="video-wrapper">
+    <header>
+            <!-- <div class="video-wrapper">
                 <iframe width="1920" height="1080" class="background-video" src="https://www.youtube.com/embed/eOl6rnBZ_V0?autoplay=1&mute=1&loop=1&playlist=eOl6rnBZ_V0" title="Bienvenue chez Lumélio" frameborder="0"></iframe>
-            </div>
+            </div> -->
         <nav>
-            <a active href="index.html"><img src="media/photo/logo-lumelio.png" alt="Logo Lumélio"></a>
+            <a active href="index.html"><img class="logo-lumelio" src="media/photo/logo-lumelio.png" alt="Logo Lumélio"></a>
             <a href="stockage.html" >Stockage</a>
             <a href="revente.html" >Revente</a>
             <!-- <a href="professionnels.html" >Professionnels</a> -->
@@ -35,9 +35,9 @@
             <a href="index.html#contact" >+33 3 27 94 17 66 <button>Être rappelé</button></a>
         </nav>
         
-        <!-- <video autoplay muted loop class="background-video" id="header-video"> -->
-            <!-- <source src="media/video/Lumelio-presentation.mp4" type="video/mp4" > -->
-        <!-- </video> -->
+        <video autoplay muted loop class="background-video" id="header-video">
+            <source src="media/video/Lumelio-presentation.mp4" type="video/mp4" >
+        </video>
         <div class="mobile-header">
             <div class="heading-wrapper">
                 <img src="./media/photo/titre-lumelio-blanc-jaune.png" alt="Lumelio-titre-blanc-jaune">
@@ -106,7 +106,7 @@
             <div class="customer">Un accompagnement auprès de <span class="customer count" id="customer-count">231</span>  <strong class="strong">Clients</strong></div>
             <div class="review">Une notoriété affirmée avec <span class="review count" id="review-count">179</span>  <strong class="strong">Avis certifés</strong> </div>
         </div>
-        <div class="content-wrapper p">
+        <div class="content-wrapper p index">
             <em class="quotation-mark un">"</em>
             <p>Société au top avec une équipe de professionnels, que ce soit le commercial comme les poseurs, sans oublier le dévouement du bureau pour les formalités et la gentillesse du patron, toujours à l’écoute et de bons conseils ! En même pas 48h, une super production, c’est bluffant ! 
             Vous pouvez leur faire confiance les yeux fermés !</p> 
@@ -262,7 +262,7 @@
         </div>
         <div class="footer-end">
                 <ul>
-                    <li><a href="index.html" active class=""><img src="media/photo/logo-lumelio.png" alt="logo Lumélio">Accueil</a></li> 
+                    <li><a href="index.html" active ><img class="logo-lumelio" src="media/photo/logo-lumelio.png" alt="logo Lumélio">Accueil</a></li> 
                     <li><a href="stockage.html" class="">Stockage</a></li>
                     <li><a href="revente.html" class="">Revente</a></li>
                     <li><a href="professionnels.html" class="">Professionnels</a></li>

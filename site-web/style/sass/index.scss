@@ -145,6 +145,7 @@ h1, #proprietaire-elec-title
   text-align: justify;
 }
 
+
 .grid
 {
   @media #{$mobile} {
@@ -361,6 +362,7 @@ form
 {
   @include flex(row, space-around, center);
   flex-wrap: wrap;
+  width: 70%;
 }
 
 .accreditation-section>.image-wrapper>.image-wrapper
